@@ -14,6 +14,15 @@ namespace RegexApp1.Models
         public static string? FindRegexInText(string text, string pattern)
         {
             string result = "";
+            if (text == null || text == "")
+            {
+                return result;
+            }
+
+            if (pattern == null || pattern == "")
+            {
+                return text;
+            }
             Regex r = new Regex(pattern);
             MatchCollection m = r.Matches(text);
             foreach (Match x in m)
